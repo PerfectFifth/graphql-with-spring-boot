@@ -1,0 +1,40 @@
+
+Run - mvn spring-boot:run
+
+
+Browse - http://localhost:8080/graphql
+
+
+
+Query:
+
+query {
+    
+        vehicle(id: 1)
+        {
+           id
+           type
+           modelCode
+           brandName
+           launchDate
+           
+        }
+    
+    
+}
+
+Mutation:
+
+
+mutation {
+    
+        createVehicle(type:"Xi", modelCode:"Fiesta", brandName:"Ford", launchDate:"2013-01-11")
+        {
+           id
+        }
+    
+    
+}
+
+
+
