@@ -44,7 +44,7 @@ public class Vehicle implements Serializable {
 	}
 	
 	public String getType() {
-		return "Dude" + type;		
+		return type;		
 	}
 	
 	public void setModelCode(String modelCode) {

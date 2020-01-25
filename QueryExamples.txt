@@ -1,12 +1,21 @@
 
-Run - mvn spring-boot:run
+Run - Import project into Eclipse using > General > Projects from Folder or Archive.  Then run as Spring Boot App.
+
+Browse - Using postman browse to http://localhost:8080/graphql and then use the GraphQL option in the body. Ensure POST is selected as request method.
 
 
-Browse - http://localhost:8080/graphql
+Step 1: When submitting query below, the first time it should return a vehicle stating, no such vehicle exists in the vehicle details (not pretty but just proving a point here).
+
+Step 2: Submit mutation below to add vehicle to data source, currently a H2 in memory database (The DB resets and clears down everytime the spring boot app is re-started).
+
+Step 3: Submit the query again, and now you should see the data you submitted in step 2.
+
+NB.  This code just proves the point that data can come from a data source, and can be altered before being sent on from the API to the client by the code.
+
+Step 4: Now run through steps 1 - 3 in debug mode to see what is happening, put a break point in VehicleQuery.java line 33.
 
 
-
-Query:
+Query (use this):
 
 query {
     
@@ -23,16 +32,14 @@ query {
     
 }
 
-Mutation:
-
+Mutation (use this):
 
 mutation {
     
         createVehicle(type:"Xi", modelCode:"Fiesta", brandName:"Ford", launchDate:"2013-01-11")
         {
            id
-        }
-    
+        }   
     
 }
 
