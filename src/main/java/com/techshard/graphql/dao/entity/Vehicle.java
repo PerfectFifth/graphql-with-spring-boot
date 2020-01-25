@@ -11,6 +11,7 @@ import java.time.LocalDate;
 @EqualsAndHashCode
 @Entity
 public class Vehicle implements Serializable {
+	
 
     private static final long serialVersionUID = 1L;
 
@@ -37,4 +38,36 @@ public class Vehicle implements Serializable {
     public String getFormattedDate() {
         return getLaunchDate().toString();
     }
+
+	public void setType(String type) {
+		this.type = type;		
+	}
+	
+	public String getType() {
+		return "Dude" + type;		
+	}
+	
+	public void setModelCode(String modelCode) {
+		this.modelCode = modelCode;		
+	}
+	
+	public String getModelCode() {
+		return this.modelCode;		
+	}
+	
+	public void setBrandName(String brandName) {
+		this.brandName = brandName;		
+	}
+	
+	public String getBrandName() {
+		return this.brandName;		
+	}
+	
+	public void setLaunchDate(LocalDate launchDate) {
+		this.launchDate = launchDate;		
+	}
+	
+	public LocalDate getLaunchDate() {
+		return this.launchDate;		
+	}
 }
